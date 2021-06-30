@@ -2,11 +2,22 @@
 source /usr/lib/naylib
 
 draw_heading "Update/install pip packages"
-
+increase_heading_level
 # pip dependencies
+draw_heading "termdown"
 sudo pip install termdown
+
+draw_heading "ueberzug"
+dpkg -s "x11proto-xext-dev" &>/dev/null || sudo apt install -y x11proto-xext-dev 
+dpkg -s "libxres-dev" &>/dev/null || sudo apt install -y libxres-dev 
+dpkg -s "libx11-dev" &>/dev/null || sudo apt install -y libx11-dev 
+
 sudo pip install ueberzug
+
+draw_heading "oauth2"
 sudo pip install oauth2-client
+
+draw_heading "apt-select"
 sudo pip install apt-select
 
 # apt packages adjustments
@@ -16,6 +27,7 @@ sudo pip install apt-select
 if ! dpkg -s "bat" &>/dev/null ; then
   cd /tmp
   apt-get download bat
+  sudo apt install -y libgit2-28 
   sudo dpkg --force-overwrite -i bat*.deb
 fi
 ### set batcat to bat

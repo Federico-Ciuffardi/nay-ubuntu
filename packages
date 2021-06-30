@@ -81,11 +81,12 @@ zip
 rar
 
 ## misc
+curl
+python3-pip
 xdg-user-dirs
 redshift
 dkms
 lxqt-sudo
-man
 man-db
 sudo
 grep

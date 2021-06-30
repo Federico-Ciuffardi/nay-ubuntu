@@ -1,7 +1,0 @@
-# Enable services
-systemctl enable getty@
-systemctl enable ntpd.service
-
-# change shell
-chsh -s /usr/bin/zsh
-
