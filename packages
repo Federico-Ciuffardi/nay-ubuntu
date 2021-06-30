@@ -25,7 +25,6 @@ gimp
 
 ## video
 mpd
-#stremio
 
 ## audio
 pulseaudio
@@ -41,7 +40,6 @@ newsboat
 
 ## shell
 zsh
-zsh-antigen
 zsh-syntax-highlighting
 
 ## monitoring
@@ -51,6 +49,7 @@ htop
 
 ## web browser
 firefox
+neomutt
 
 ## file manager
 ranger
