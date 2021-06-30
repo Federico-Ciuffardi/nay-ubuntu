@@ -1,0 +1,21 @@
+#! /bin/bash
+
+source /usr/lib/naylib
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+draw_heading "Update packages"
+
+sudo apt update && sudo apt upgrade
+pkill -RTMIN+3 dwmblocks
+
+draw_heading "Install packages"
+increase_heading_level
+
+for pkg in `cat "$DIR/../packages" | sed -e '/^[ \t]*#/d' | sed '/^$/d'` ; do
+  dpkg -s "$pkg" &>/dev/null && continue
+
+  echo 
+  draw_heading $pkg
+  sudo apt install $pkg
+done

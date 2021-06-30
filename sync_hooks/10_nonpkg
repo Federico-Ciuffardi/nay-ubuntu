@@ -1,0 +1,87 @@
+#!/bin/sh
+
+source /usr/lib/naylib
+
+#############
+# functions #
+#############
+
+function execute_step(){
+  step_comment=$1
+  shift
+  if [ $verbose -gt 0 ] ; then
+    echo "$step_comment"
+    $@
+  else
+    draw_spinner "$step_comment" $@
+  fi
+  return $?
+}
+
+# usage: 'update [root] [repo]'
+function update(){
+  root=$1
+  shift
+  repo=$1
+  shift
+  compile="$@"
+
+  pkg_name="`echo ${repo##*/} | cut -d'.' -f1`"
+  draw_heading "Updating $pkg_name"
+  mkdir -p "$root"
+  cd "$root"
+  
+  if [ ! -d $pkg_name ] ; then
+    just_cloned=true
+    execute_step "git clone" "git clone --progress $repo"
+    [ $? -eq 0 ] || return $?
+    cd $pkg_name
+  else
+    just_cloned=false
+    cd $pkg_name
+    execute_step "git fetch" "git fetch"
+    [ $? -eq 0 ] || return $?
+  fi
+
+  if ! $just_cloned && ([ ! -z "`git rev-list origin/master..HEAD`" ]  || [ ! -z "`git status -s`" ] ) ; then
+    printf "\e[1A\u001b[33m!\u001b[0m Has local changes!\n"
+    return 201
+  elif ! $just_cloned && [ -z "`git rev-list HEAD..origin/master`" ] ; then
+    printf "\e[1A\u001b[32m✓\u001b[0m Up to date!\n"
+    return 200
+  else
+    execute_step "git pull" "git pull"
+    [ $? -eq 0 ] || return $?
+    [ -z "$compile" ] || $compile
+    return $?
+  fi
+
+}
+
+################
+# Declarations #
+################
+
+verbose=$1
+[ -z $verbose ] && verbose=0
+
+########
+# Main #
+########
+
+update "$HOME/.build" "https://github.com/federico-ciuffardi/dwm" "execute_step "make" "sudo make install""
+
+update "$HOME/.build" "https://github.com/federico-ciuffardi/dwmblocks" "execute_step "make" "sudo make install""
+
+update "$HOME/.build" "https://github.com/federico-ciuffardi/st" "execute_step "make" "sudo make install""
+
+update "$HOME/.build" "git@github.com:Federico-Ciuffardi/sxiv.git" "execute_step "make" "sudo make install""
+
+
+update "$HOME/.build" "git@github.com:pbrisbin/mail-query.git" "execute_step "make" "sudo make install""
+
+update "$HOME/.tmux/plugins" "https://github.com/tmux-plugins/tpm"
+
+update "$HOME" "https://github.com/federico-ciuffardi/bin" "execute_step "make" "sudo sh make.sh install""
+
+exit 0

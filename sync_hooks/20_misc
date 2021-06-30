@@ -1,0 +1,26 @@
+#!/bin/bash
+source /usr/lib/naylib
+
+draw_heading "Update/install pip packages"
+
+# pip dependencies
+sudo pip install termdown
+sudo pip install ueberzug
+sudo pip install oauth2-client
+sudo pip install apt-select
+
+# apt packages adjustments
+
+## bat 
+### install force
+if ! dpkg -s "bat" &>/dev/null ; then
+  cd /tmp
+  apt-get download bat
+  sudo dpkg --force-overwrite -i bat*.deb
+fi
+### set batcat to bat
+sudo ln -sf /bin/batcat /bin/bat
+
+## rofi
+sudo ln -sf /bin/rofi /bin/dmenu
+

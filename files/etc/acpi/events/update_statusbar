@@ -1,0 +1,3 @@
+event=.*
+action=/etc/acpi/update_statusbar.sh %e
+

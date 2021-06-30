@@ -1,0 +1,11 @@
+#!/bin/sh
+
+interface=$1 
+status=$2
+
+if [ "${status}" = "up" ]; then
+	pkill -RTMIN+3 dwmblocks
+	pkill -RTMIN+4 dwmblocks
+	pkill -RTMIN+10 dwmblocks
+	pkill -RTMIN+11 dwmblocks
+fi

@@ -1,0 +1,16 @@
+pass init $1
+gpg --list-secret-keys --keyid-format LONG | grep $1 || gpg --full-gen-key
+
+# erase the last database (this caused me trouble in the past)
+rm -r $HOME/.local/share/mail/$1 
+mkdir $HOME/.local/share/mail/$1 
+
+# could be needeed to erase the .notmuch folder as well
+# rm -r $HOME/.local/share/mail/.notmuch  
+
+mw -D $1 
+mw -a $1
+mw -y $1
+mw -T
+
+# I also needed to full_dorce the last config for $1 

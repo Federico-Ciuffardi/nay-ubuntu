@@ -1,0 +1,126 @@
+# core
+## mail
+urlscan
+
+## calculator
+speedcrunch
+
+## torrent
+qbittorrent
+
+## pdf
+okular
+
+### tmux plug
+ruby
+
+## text editor
+neovim
+fzf
+ripgrep
+
+## editor
+flameshot
+gimp
+
+## video
+mpd
+#stremio
+
+## audio
+pulseaudio
+pavucontrol-qt
+mpd
+ncmpcpp
+mpc
+alsa-utils
+playerctl
+
+## news
+newsboat
+
+## shell
+zsh
+zsh-antigen
+zsh-syntax-highlighting
+
+## monitoring
+nethogs
+ncdu
+htop
+
+## web browser
+firefox
+
+## file manager
+ranger
+udiskie
+ffmpegthumbnailer
+
+# notification
+dunst
+
+## daemons
+notification-daemon
+parcellite
+cron
+acpid
+ntp
+
+## xorg
+xorg
+arandr
+numlockx
+unclutter
+xclip
+xdotool
+
+## compresion
+atool
+zip
+rar
+
+## misc
+xdg-user-dirs
+redshift
+dkms
+lxqt-sudo
+man
+man-db
+sudo
+grep
+wget
+
+## backup
+timeshift
+
+## misc apps
+yad
+xscreensaver
+figlet
+
+### calcurse
+calcurse
+python-httplib2
+
+## secrets 
+gnome-keyring
+pass
+pass-extension-otp
+
+## rofi
+rofi
+
+## icons
+papirus-icon-theme
+
+## wallpaper
+nitrogen
+
+## look and feel
+lxappearance
+qt5ct
+
+## fonts
+fonts-noto-color-emoji
+fonts-emojione
