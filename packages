@@ -84,12 +84,16 @@ curl
 python3-pip
 xdg-user-dirs
 redshift
+redshift-gtk
 dkms
 lxqt-sudo
 man-db
 sudo
 grep
 wget
+
+## drivers
+xserver-xorg-input-synaptics
 
 ## backup
 timeshift
