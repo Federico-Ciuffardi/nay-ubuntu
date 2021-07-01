@@ -104,7 +104,6 @@ calcurse
 python-httplib2
 
 ## secrets 
-gnome-keyring
 pass
 pass-extension-otp
 
