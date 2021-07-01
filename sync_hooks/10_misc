@@ -14,7 +14,7 @@ sudo -v
 draw_spinner "Installing \"ueberzug\"" "sudo pip install ueberzug"
 
 sudo -v
-draw_spinner "Installing \"oauth2-client\"" "sudo pip install oauth2-client"
+draw_spinner "Installing \"oauth2-client\"" "sudo pip3 install oauth2-client"
 
 sudo -v
 draw_spinner "Installing \"apt-select\"" "sudo pip install apt-select"
