@@ -91,6 +91,7 @@ man-db
 sudo
 grep
 wget
+fd-find
 
 ## drivers
 xserver-xorg-input-synaptics
