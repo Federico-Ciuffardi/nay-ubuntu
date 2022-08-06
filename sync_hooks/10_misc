@@ -19,24 +19,6 @@ draw_spinner "Installing \"oauth2-client\"" "sudo pip3 install oauth2-client"
 sudo -v
 draw_spinner "Installing \"apt-select\"" "sudo pip install apt-select"
 
-# Update/install update bin
-draw_heading "Update/install zsh-antigen"
-draw_spinner "Update/install zsh-antigen" "sudo curl -o /usr/share/zsh-antigen/antigen.zsh -sL git.io/antigen"
-
-# Update/install update bin
-draw_heading "Update/install \$HOME/bin"
-cd "$HOME"
-[ -d "$HOME/bin" ] || draw_spinner "Download bin" "git clone git@github.com:federico-ciuffardi/bin"
-cd bin 
-draw_spinner "Update bin" "git pull"
-draw_spinner "Make bin" "sudo bash make.sh install"
-
-# Update/install update tpm
-draw_heading "install tpm"
-mkdir -p "$HOME/.tmux/plugins"
-cd "$HOME/.tmux/plugins"
-[ -d "$HOME/.tmux/plugins/tpm" ] || draw_spinner "Install tpm" "git clone https://github.com/tmux-plugins/tpm"
-
 # apt packages adjustments
 ## bat 
 ### install force
@@ -49,5 +31,5 @@ fi
 sudo ln -sf /bin/batcat /bin/bat
 
 ## rofi
-sudo ln -sf /bin/rofi /bin/dmenu
+sudo ln -sf /usr/bin/rofi dmenu
 

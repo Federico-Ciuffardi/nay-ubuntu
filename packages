@@ -49,7 +49,11 @@ htop
 
 ## web browser
 firefox
+
+## mail
 neomutt
+msmtp
+isync
 
 ## file manager
 ranger
