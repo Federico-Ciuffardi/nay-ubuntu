@@ -29,7 +29,3 @@ if ! dpkg -s "bat" &>/dev/null ; then
   sudo dpkg --force-overwrite -i bat*.deb
 fi
 sudo ln -sf /bin/batcat /bin/bat
-
-## rofi
-sudo ln -sf /usr/bin/rofi dmenu
-
