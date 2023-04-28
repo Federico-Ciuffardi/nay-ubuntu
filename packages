@@ -131,7 +131,6 @@ fonts-emojione
 
 # uur 
 main/bin
-main/bootstrap
 main/dragon
 main/dunst
 main/dwm
@@ -147,8 +146,6 @@ main/ranger
 main/rofi
 main/st
 main/sxiv
-main/task
-main/taskwarrior-tui
 main/tmux
 main/whatsapp-nativefier
 main/youtube-music
