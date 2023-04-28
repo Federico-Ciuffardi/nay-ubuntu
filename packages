@@ -128,3 +128,28 @@ qt5ct
 ## fonts
 fonts-noto-color-emoji
 fonts-emojione
+
+# uur 
+main/bin
+main/bootstrap
+main/dragon
+main/dunst
+main/dwm
+main/dwmblocks
+main/libxft-bgra-debian
+main/mail-query
+main/nay
+main/neomutt
+main/neovim
+main/nerd-fonts
+main/picom
+main/ponymix
+main/ranger
+main/rofi
+main/st
+main/sxiv
+main/task
+main/taskwarrior-tui
+main/tmux
+main/whatsapp-nativefier
+main/youtube-music
