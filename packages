@@ -11,7 +11,9 @@ qbittorrent
 ## pdf
 okular
 
-### tmux plug
+## tmux
+tmux
+### tmux
 ruby
 
 ## text editor
@@ -35,9 +37,6 @@ mpc
 alsa-utils
 playerctl
 
-## news
-newsboat
-
 ## shell
 zsh
 zsh-syntax-highlighting
@@ -51,6 +50,7 @@ htop
 firefox
 
 ## mail
+mutt-wizard
 neomutt
 msmtp
 isync
@@ -138,7 +138,6 @@ main/dwmblocks
 main/libxft-bgra-debian
 main/mail-query
 main/nay
-main/neovim
 main/nerd-fonts
 main/picom
 main/ponymix
@@ -146,6 +145,5 @@ main/ranger
 main/rofi
 main/st
 main/sxiv
-main/tmux
 main/whatsapp-nativefier
 main/youtube-music
